@@ -17,7 +17,12 @@ class CredentialType extends AbstractType
             ->add('name', TextType::class)
             ->add('url', TextType::class)
             ->add('login', TextType::class)
-            ->add('password', PasswordType::class)
+            ->add('password', TextType::class, [
+                'mapped' => true,
+                'attr' => [
+                    'type' => 'password',
+                ]
+            ])
         ;
     }
 
