@@ -18,12 +18,27 @@ class CredentialController extends AbstractController
     /**
      * @Route("/", name="credential_index", methods={"GET"})
      */
-    public function index(CredentialRepository $credentialRepository): Response
+    public function index(CredentialRepository $credentialRepository, Request $request): Response
     {
-        $credentials = $credentialRepository->findByUser($this->getUser());
+        $credentials = $credentialRepository->findByUser($this->getUser(),['name' => 'ASC']);
+        $credentialFocus = null;
+
+        if ($credentials) {
+            $credentialFocus = $credentials[0];
+        }
+
+        $id = $request->query->get('credential');
+
+        if ($id) {
+            $focus = $credentialRepository->findOneById($id);
+            if ($focus) {
+                $credentialFocus = $focus;
+            }
+        }
 
         return $this->render('credential/index.html.twig', [
             'credentials' => $credentials,
+            'credentialFocus' => $credentialFocus,
         ]);
     }
 
