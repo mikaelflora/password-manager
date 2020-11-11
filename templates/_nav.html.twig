@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+
+    <a class="navbar-brand" href="{{ path('home') }}">Password Manager</a>
+    <!-- nav brand -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- nav content -->
+    <div class="navbar-collapse collapse" id="collapsingNavbar">
+        <!-- nav content right -->
+        <ul class="navbar-nav ml-auto">
+            {% if app.user %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-sm btn-outline-warning text-warning" href="{{ path('account') }}">Account</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_login') }}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-sm btn-outline-warning text-warning" href="{{ path('app_register') }}">Registration</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
