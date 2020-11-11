@@ -1,6 +1,16 @@
-function confirmationModal() {
-    const modal = document.getElementById('confirm-submit');
+function openModal() {
+    return false;
+}
 
-    // $('#confirm-submit').showModal()
-    modal.showModal();
+function closeModal() {
+    const form = document.getElementById('form');
+    form.onsubmit = sendForm();
+    form.submit();
+    form.onsubmit = openModal();
+
+    return true;
+}
+
+function sendForm() {
+    return true;
 }
