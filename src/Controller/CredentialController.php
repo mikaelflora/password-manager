@@ -20,8 +20,10 @@ class CredentialController extends AbstractController
      */
     public function index(CredentialRepository $credentialRepository): Response
     {
+        $credentials = $credentialRepository->findByUser($this->getUser());
+
         return $this->render('credential/index.html.twig', [
-            'credentials' => $credentialRepository->findByUser($this->getUser()),
+            'credentials' => $credentials,
         ]);
     }
 

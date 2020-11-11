@@ -14,6 +14,7 @@ class CredentialType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('name', TextType::class)
             ->add('url', TextType::class)
             ->add('login', TextType::class)
             ->add('password', PasswordType::class)

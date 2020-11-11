@@ -11,7 +11,7 @@
         <ul class="navbar-nav ml-auto">
             {% if app.user %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+                    <a class="nav-link" href="{{ path('app_logout') }}">Logout <small>({{ app.user.email }})</small></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn btn-sm btn-outline-warning text-warning" href="{{ path('account') }}">Account</a>
