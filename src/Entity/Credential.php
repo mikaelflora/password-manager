@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\CredentialsRepository;
+use App\Repository\CredentialRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=CredentialsRepository::class)
+ * @ORM\Entity(repositoryClass=CredentialRepository::class)
  */
-class Credentials
+class Credential
 {
     /**
      * @ORM\Id
