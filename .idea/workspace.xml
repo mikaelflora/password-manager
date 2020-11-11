@@ -12,13 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ce71b874-3c47-4987-a5d8-9c480ad432a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CredentialType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CredentialType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/credential/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/credential/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/credential/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/credential/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/credential/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/credential/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/credential/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/credential/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/credential/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/credential/new.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +174,7 @@
       <workItem from="1605089238139" duration="3000" />
       <workItem from="1605096205441" duration="3848000" />
       <workItem from="1605102954315" duration="3243000" />
-      <workItem from="1605109487001" duration="2862000" />
+      <workItem from="1605109487001" duration="4958000" />
     </task>
     <servers />
   </component>
