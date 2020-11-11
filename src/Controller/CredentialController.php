@@ -21,7 +21,7 @@ class CredentialController extends AbstractController
     public function index(CredentialRepository $credentialRepository): Response
     {
         return $this->render('credential/index.html.twig', [
-            'credentials' => $credentialRepository->findAll(),
+            'credentials' => $credentialRepository->findByUser($this->getUser()),
         ]);
     }
 
@@ -35,6 +35,8 @@ class CredentialController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $credential->setUser($this->getUser());
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($credential);
             $entityManager->flush();

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -40,6 +42,16 @@ class User implements UserInterface
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Credential::class, mappedBy="user", orphanRemoval=true)
+     */
+    private $credentials;
+
+    public function __construct()
+    {
+        $this->credentials = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -127,6 +139,36 @@ class User implements UserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Credential[]
+     */
+    public function getCredentials(): Collection
+    {
+        return $this->credentials;
+    }
+
+    public function addCredential(Credential $credential): self
+    {
+        if (!$this->credentials->contains($credential)) {
+            $this->credentials[] = $credential;
+            $credential->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCredential(Credential $credential): self
+    {
+        if ($this->credentials->removeElement($credential)) {
+            // set the owning side to null (unless already changed)
+            if ($credential->getUser() === $this) {
+                $credential->setUser(null);
+            }
+        }
 
         return $this;
     }
