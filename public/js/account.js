@@ -7,3 +7,13 @@ function copyText(text) {
     document.execCommand('copy');
     document.body.removeChild(tmp);
 }
+
+function focusPassword() {
+    const password = document.getElementById('password');
+    password.setAttribute('type', 'text');
+}
+
+function blurPassword() {
+    const password = document.getElementById('password');
+    password.setAttribute('type', 'password');
+}

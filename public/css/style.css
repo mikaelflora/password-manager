@@ -1,3 +1,11 @@
 .input-group-text a, .input-group-text a:hover{
     color:#333
 }
+
+#password {
+    border: none;
+}
+
+#password:focus {
+    outline: none;
+}

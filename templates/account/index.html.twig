@@ -59,7 +59,7 @@
                         <div class="d-flex align-items-center">
                             <div class="d-flex flex-column">
                                 <strong><small class="text-primary">PASSWORD</small></strong>
-                                <span class="text-muted">{{ credentialFocus.password }}</span>
+                                <input type="password" class="text-muted" value="{{ credentialFocus.password }}" onfocus="focusPassword()" onblur="blurPassword()" id="password">
                             </div>
                             <button class="btn btn-sm text-primary ml-auto" onclick="copyText(`{{ credentialFocus.password }}`)">Copy</button>
                         </div>
