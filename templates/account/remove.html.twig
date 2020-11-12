@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Account - password{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-body">
+                    <a href="{{ path('account') }}" class="btn btn-primary my-3 rounded-circle shadow">
+                        <span class="fa fa-arrow-left"></span>
+                    </a>
+                    <h4 class="card-title">Remove account</h4>
+                    <div class="card-body">
+                        {% for label, messages in app.flashes %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{ label }}">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+
+                        {{ form(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
