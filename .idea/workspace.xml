@@ -10,11 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce71b874-3c47-4987-a5d8-9c480ad432a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/index.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="ce71b874-3c47-4987-a5d8-9c480ad432a2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -183,7 +179,7 @@
       <workItem from="1605122394423" duration="958000" />
       <workItem from="1605157660930" duration="10070000" />
       <workItem from="1605177920797" duration="5506000" />
-      <workItem from="1605190657614" duration="1528000" />
+      <workItem from="1605190657614" duration="2145000" />
     </task>
     <servers />
   </component>
