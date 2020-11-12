@@ -25,6 +25,7 @@ class UploadFileType extends AbstractType
                         'maxSize' => '1024k',
                         'mimeTypes' => [
                             'text/csv',
+                            'text/plain',
                         ],
                         'mimeTypesMessage' => 'Please upload a valid CSV document',
                     ])

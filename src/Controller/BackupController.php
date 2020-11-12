@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Credential;
 use App\Entity\User;
 use App\Form\UploadFileType;
 use App\Repository\CredentialRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,6 +17,8 @@ class BackupController extends AbstractController
 {
     /**
      * @Route("/backup", name="backup")
+     * @param CredentialRepository $credentialRepository
+     * @return Response
      */
     public function index(CredentialRepository $credentialRepository): Response
     {
@@ -30,8 +34,8 @@ class BackupController extends AbstractController
 
             if ($file = fopen($fqpfn, 'w')) {
                 // header
-                $line = "NAME;LOGIN;PASSWORD;URL";
-                fwrite($file, $line . "\r\n");
+                $header = ['NAME', 'LOGIN', 'PASSWORD', 'URL'];
+                fputcsv($file, $header, ";", '"');
                 // data
                 foreach ($credentials as $credential) {
                     // write line to filename
@@ -41,8 +45,7 @@ class BackupController extends AbstractController
                         $credential->getPassword(),
                         $credential->getUrl(),
                     ];
-                    $line = implode(';', $line) . "\r\n";
-                    fwrite($file, $line);
+                    fputcsv($file, $line, ";", '"');
                 }
             }
             fclose($file);
@@ -56,9 +59,11 @@ class BackupController extends AbstractController
     /**
      * @Route("/backup/recovery", name="backup_recovery")
      * @param Request $request
+     * @param EntityManagerInterface $entityManager
+     * @param CredentialRepository $credentialRepository
      * @return Response
      */
-    public function recovery(Request $request): Response
+    public function recovery(Request $request, EntityManagerInterface $entityManager, CredentialRepository $credentialRepository): Response
     {
         $user = new User();
 
@@ -67,12 +72,36 @@ class BackupController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // purge
+            $all = $credentialRepository->findByUser($this->getUser());
+
+            foreach ($all as $credential) {
+                $entityManager->remove($credential);
+            }
+            // populate DB
             $file = $form->get('file')->getData();
 
-            dd($file);
-        }
+            $header = true;
+            if ($fileOpen = fopen($file->getPathname(), 'r')) {
+                while (($line = fgetcsv($fileOpen, 0, ';', '"')) !== FALSE) {
+                    if ($header) {
+                        $header = false;
+                    } else {
+                        $credential = new Credential();
+                        $credential->setUser($this->getUser());
+                        $credential->setName($line[0]);
+                        $credential->setLogin($line[1]);
+                        $credential->setPassword($line[2]);
+                        $credential->setUrl($line[3]);
 
-//        dd($user);
+                        $entityManager->persist($credential);
+                    }
+                }
+                $entityManager->flush();
+            }
+            fclose($fileOpen);
+            return $this->redirectToRoute('credential_index');
+        }
 
         return $this->render('backup/recovery.html.twig', [
             'form' => $form->createView(),
