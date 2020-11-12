@@ -12,8 +12,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ce71b874-3c47-4987-a5d8-9c480ad432a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/confirm.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/confirm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/credential/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/credential/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/AppAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/AppAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_nav.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/credential/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/credential/edit.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +180,8 @@
       <workItem from="1605102954315" duration="3243000" />
       <workItem from="1605109487001" duration="5030000" />
       <workItem from="1605116044250" duration="139000" />
-      <workItem from="1605122394423" duration="648000" />
+      <workItem from="1605122394423" duration="958000" />
+      <workItem from="1605157660930" duration="4967000" />
     </task>
     <servers />
   </component>
@@ -201,10 +205,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="555" y="180" width="800" height="671" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1605079079156" />
-    <state x="679" y="0" width="542" height="1034" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605078627861">
+    <state x="679" y="0" width="542" height="1034" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605160282446">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="679" y="0" width="542" height="1034" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1605078627861" />
+    <state x="679" y="0" width="542" height="1034" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1605160282446" />
     <state x="693" y="277" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605083239219">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -213,6 +217,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="738" y="273" width="424" height="478" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1605079075045" />
+    <state x="666" y="99" width="587" height="840" key="find.popup" timestamp="1605158626717">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="99" width="587" height="840" key="find.popup/1920.0.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1605158626717" />
     <state x="623" y="228" key="search.everywhere.popup" timestamp="1605096743921">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
