@@ -20,6 +20,12 @@ class UploadFileType extends AbstractType
             ->add('file', FileType::class, [
                 'mapped' => false,
                 'label' => 'CSV file to upload',
+                'label_attr' => [
+                    'class' => 'inner-file-label',
+                ],
+//                'attr' => [
+//                    'class' => 'form-control-file'
+//                ],
                 'constraints' => [
                     new File([
                         'maxSize' => '1024k',

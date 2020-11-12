@@ -9,4 +9,16 @@
         </div>
     </div>
 
+    <script>
+        const fileField = document.getElementById('upload_file_file');
+        const fileFieldLabel = document.getElementsByClassName('custom-file-label');
+
+        fileField.addEventListener('change', myFunction);
+
+        function myFunction(event) {
+            const fileName = this.files[0].name;
+            // console.log(fileName);
+            document.getElementsByClassName('inner-file-label')[1].innerHTML = fileName;
+        }
+    </script>
 {% endblock %}
