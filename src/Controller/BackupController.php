@@ -34,7 +34,7 @@ class BackupController extends AbstractController
 
             if ($file = fopen($fqpfn, 'w')) {
                 // header
-                $header = ['NAME', 'LOGIN', 'PASSWORD', 'URL'];
+                $header = ['NAME', 'LOGIN', 'PASSWORD', 'URL', 'NOTE'];
                 fputcsv($file, $header, ";", '"');
                 // data
                 foreach ($credentials as $credential) {
@@ -44,6 +44,7 @@ class BackupController extends AbstractController
                         $credential->getLogin(),
                         $credential->getPassword(),
                         $credential->getUrl(),
+                        $credential->getNote(),
                     ];
                     fputcsv($file, $line, ";", '"');
                 }
@@ -93,6 +94,7 @@ class BackupController extends AbstractController
                         $credential->setLogin($line[1]);
                         $credential->setPassword($line[2]);
                         $credential->setUrl($line[3]);
+                        $credential->setNote($line[4]);
 
                         $entityManager->persist($credential);
                     }
