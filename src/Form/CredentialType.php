@@ -16,15 +16,22 @@ class CredentialType extends AbstractType
     {
         $builder
             ->add('name', TextType::class)
-            ->add('url', TextType::class)
-            ->add('login', TextType::class)
+            ->add('url', TextType::class, [
+                'required' => false,
+            ])
+            ->add('login', TextType::class, [
+                'required' => false,
+            ])
             ->add('password', TextType::class, [
+                'required' => false,
                 'mapped' => true,
                 'attr' => [
                     'type' => 'password',
                 ]
             ])
-            ->add('note', TextareaType::class)
+            ->add('note', TextareaType::class, [
+                'required' => false,
+            ])
         ;
     }
 
