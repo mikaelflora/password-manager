@@ -14,7 +14,7 @@ final class Version20201111083507 extends AbstractMigration
 {
     public function getDescription() : string
     {
-        return '';
+        return 'Add user to credential table';
     }
 
     public function up(Schema $schema) : void

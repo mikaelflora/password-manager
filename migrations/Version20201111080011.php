@@ -14,7 +14,7 @@ final class Version20201111080011 extends AbstractMigration
 {
     public function getDescription() : string
     {
-        return '';
+        return 'initial dabase (user and credential)';
     }
 
     public function up(Schema $schema) : void
