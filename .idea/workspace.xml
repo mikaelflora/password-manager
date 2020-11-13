@@ -12,8 +12,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ce71b874-3c47-4987-a5d8-9c480ad432a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CredentialController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CredentialController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Credential.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Credential.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/CredentialType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CredentialType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/credential/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/credential/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/credential/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/credential/_form.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +187,8 @@
       <workItem from="1605157660930" duration="10070000" />
       <workItem from="1605177920797" duration="5506000" />
       <workItem from="1605190657614" duration="6795000" />
-      <workItem from="1605201211945" duration="1715000" />
+      <workItem from="1605201211945" duration="1852000" />
+      <workItem from="1605249404783" duration="1190000" />
     </task>
     <servers />
   </component>
@@ -212,10 +216,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="679" y="0" width="542" height="1034" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1605160282446" />
-    <state x="693" y="277" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605178481980">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2613" y="288" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605249564966">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="693" y="277" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1605178481980" />
+    <state x="2613" y="288" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1605249564966" />
     <state x="738" y="273" width="424" height="478" key="FileChooserDialogImpl" timestamp="1605079075045">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

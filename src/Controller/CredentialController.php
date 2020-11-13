@@ -6,9 +6,11 @@ use App\Entity\Credential;
 use App\Form\CredentialType;
 use App\Repository\CredentialRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
  * @Route("/credential")
@@ -44,8 +46,11 @@ class CredentialController extends AbstractController
 
     /**
      * @Route("/new", name="credential_new", methods={"GET","POST"})
+     * @param Request $request
+     * @param SluggerInterface $slugger
+     * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request, SluggerInterface $slugger): Response
     {
         $credential = new Credential();
         $form = $this->createForm(CredentialType::class, $credential);
@@ -53,6 +58,31 @@ class CredentialController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $credential->setUser($this->getUser());
+            $image = $form->get('image')->getData();
+
+            if ($image) {
+                $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$image->guessExtension();
+
+                // Move the file to the directory where brochures are stored
+                try {
+                    $image->move(
+                        $this->getParameter('images_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+
+                    // ... handle exception if something happens during file upload
+                }
+
+                // updates the 'brochureFilename' property to store the PDF file name
+                // instead of its contents
+                $credential->setImageFilename($newFilename);
+            }
+
+            dd($credential);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($credential);
