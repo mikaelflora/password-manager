@@ -16,3 +16,4 @@
 ###< symfony/phpunit-bridge ###
 
 /public/tmp/
+/public/img/

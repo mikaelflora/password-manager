@@ -82,8 +82,6 @@ class CredentialController extends AbstractController
                 $credential->setImageFilename($newFilename);
             }
 
-            dd($credential);
-
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($credential);
             $entityManager->flush();
@@ -109,13 +107,41 @@ class CredentialController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="credential_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Credential $credential
+     * @param SluggerInterface $slugger
+     * @return Response
      */
-    public function edit(Request $request, Credential $credential): Response
+    public function edit(Request $request, Credential $credential, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(CredentialType::class, $credential);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $image = $form->get('image')->getData();
+
+            if ($image) {
+                $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$image->guessExtension();
+
+                // Move the file to the directory where brochures are stored
+                try {
+                    $image->move(
+                        $this->getParameter('images_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+
+                    // ... handle exception if something happens during file upload
+                }
+
+                // updates the 'brochureFilename' property to store the PDF file name
+                // instead of its contents
+                $credential->setImageFilename($newFilename);
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('credential_index');
