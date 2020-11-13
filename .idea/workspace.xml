@@ -11,9 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce71b874-3c47-4987-a5d8-9c480ad432a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CredentialController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CredentialController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/credential/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/credential/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +184,7 @@
       <workItem from="1605177920797" duration="5506000" />
       <workItem from="1605190657614" duration="6795000" />
       <workItem from="1605201211945" duration="1852000" />
-      <workItem from="1605249404783" duration="2658000" />
+      <workItem from="1605249404783" duration="3023000" />
     </task>
     <servers />
   </component>
