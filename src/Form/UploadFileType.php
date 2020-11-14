@@ -23,9 +23,6 @@ class UploadFileType extends AbstractType
                 'label_attr' => [
                     'class' => 'inner-file-label',
                 ],
-//                'attr' => [
-//                    'class' => 'form-control-file'
-//                ],
                 'constraints' => [
                     new File([
                         'maxSize' => '1024k',
