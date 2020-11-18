@@ -55,6 +55,7 @@ class CredentialController extends AbstractController
         $credential = new Credential();
         $form = $this->createForm(CredentialType::class, $credential);
         $form->handleRequest($request);
+        $imageName = 'no-image.jpg';
 
         if ($form->isSubmitted() && $form->isValid()) {
             $credential->setUser($this->getUser());
@@ -80,6 +81,8 @@ class CredentialController extends AbstractController
                 // updates the 'brochureFilename' property to store the PDF file name
                 // instead of its contents
                 $credential->setImageFilename($newFilename);
+            } else {
+                $credential->setImageFilename('no-image.jpg');
             }
 
             $entityManager = $this->getDoctrine()->getManager();
@@ -92,6 +95,7 @@ class CredentialController extends AbstractController
         return $this->render('credential/new.html.twig', [
             'credential' => $credential,
             'form' => $form->createView(),
+            'image' => $imageName,
         ]);
     }
 
@@ -116,6 +120,11 @@ class CredentialController extends AbstractController
     {
         $form = $this->createForm(CredentialType::class, $credential);
         $form->handleRequest($request);
+        $imageName = $credential->getImageFilename();
+
+        if (!$imageName) {
+            $imageName = 'no-image.jpg';
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
             $image = $form->get('image')->getData();
@@ -150,6 +159,7 @@ class CredentialController extends AbstractController
         return $this->render('credential/edit.html.twig', [
             'credential' => $credential,
             'form' => $form->createView(),
+            'image' => $imageName,
         ]);
     }
 

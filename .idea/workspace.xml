@@ -11,7 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce71b874-3c47-4987-a5d8-9c480ad432a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Form/CredentialType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CredentialType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CredentialController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CredentialController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/credential/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/credential/_form.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +195,7 @@
       <workItem from="1605423456501" duration="737000" />
       <workItem from="1605436937282" duration="142000" />
       <workItem from="1605442317544" duration="11000" />
-      <workItem from="1605711341986" duration="51000" />
+      <workItem from="1605711341986" duration="2207000" />
     </task>
     <servers />
   </component>
