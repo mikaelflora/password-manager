@@ -21,6 +21,7 @@ class CredentialType extends AbstractType
             ->add('name', TextType::class)
             ->add('image', FileType::class, [
                 'mapped' => false,
+                'required' => false,
                 'label_attr' => [
                     'class' => 'inner-file-label',
                 ],
