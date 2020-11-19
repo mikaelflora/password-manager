@@ -22,8 +22,15 @@ class CredentialType extends AbstractType
             ->add('image', FileType::class, [
                 'mapped' => false,
                 'required' => false,
+                'row_attr' => [
+                    'hidden' => true,
+                ],
                 'label_attr' => [
                     'class' => 'inner-file-label',
+                    'hidden' => true,
+                ],
+                'attr' => [
+                    'hidden' => true,
                 ],
                 'constraints' => [
                     new File([
