@@ -12,7 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ce71b874-3c47-4987-a5d8-9c480ad432a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/credential/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/credential/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/credential/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/credential/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -198,7 +198,7 @@
       <workItem from="1605711341986" duration="2290000" />
       <workItem from="1605804551727" duration="946000" />
       <workItem from="1605812010173" duration="787000" />
-      <workItem from="1605950654531" duration="195000" />
+      <workItem from="1605950654531" duration="2391000" />
     </task>
     <servers />
   </component>
